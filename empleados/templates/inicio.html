@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Inicio | Sistema empleados {% endblock  %}
+
+
+{% block content %}
+    
+{% include 'includes/header.html' %}
+
+<!-- Inicio imagen de portada -->
+<div class="row">
+  <div class="columns">
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+      <ul class="orbit-container">
+        <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+        <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+        <li class="is-active orbit-slide">
+          <img class="orbit-image" src="{% static 'img/img1.jpg' %}" alt="Space">
+          <figcaption class="orbit-caption">Dedicación.</figcaption>
+        </li>
+        <li class="orbit-slide">
+          <img class="orbit-image" src="{% static 'img/img2.jpg' %}" alt="Space">
+          <figcaption class="orbit-caption">Respeto.</figcaption>
+        </li>
+        <li class="orbit-slide">
+          <img class="orbit-image" src="{% static 'img/img3.jpg' %}" alt="Space">
+          <figcaption class="orbit-caption">Excelente clima laboral.</figcaption>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Fin imagen de portada -->
+
+<!-- Bloque de bienvenida -->
+<div class="grid-x align-center bloqueBienvenida">
+    <h1 class='cell large-8 textoBienvenida'>Bienvenido al Sistema de Registro de Empleados</h1>
+    <div class="cell large-7">
+        <div class="callout success">
+            <h5>Registre y controle empleados</h5>
+            <p>
+                Gracias a esta aplicación usted puede registrar a los empleados de su compañia como tambien 
+                registrar un nuevo departamento en el cual necesite personal y pueda agregar empleados en el mismo.
+            </p>
+            <a href="{% url 'persona_app:empleados_all' %}">Ver empleados</a>
+          </div>
+    </div>
+</div>
+<!-- Fin bloque de bienvenida -->
+
+{% endblock %}
+    

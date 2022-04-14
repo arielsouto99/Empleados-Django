@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Lista empleados por Departamento{% endblock  %}
+
+
+{% block content %}
+    {% include 'includes/header.html' %}
+
+    <div class="grid-container">
+        <div class="grid-x" style='margin-top:6%'>
+            <div class="cell">
+                <h3>Empleados por Area:</h3>
+            </div>
+            <div class="cell">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="80">ID</th>
+                            <th width="100">NOMBRES</th>
+                            <th width="100">APELLIDOS</th>
+                            <th width="100">DEPARTAMENTO</th>
+                            <th width="120">ACCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for empleado in filtro_area %}
+                        <tr>
+                            <td>{{empleado.id}}</td>
+                            <td>{{empleado.first_name}}</td>
+                            <td>{{empleado.last_name}}</td>
+                            <td>{{empleado.departamento}}</td>
+                            <td><a class="button warning" href="{% url 'persona_app:detail_empleado' empleado.id %}">Ver</a></td>
+                            <!-- empleado.id es el PK que le pasamos por URL para que ahora lo integre al apretar el boton -->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    

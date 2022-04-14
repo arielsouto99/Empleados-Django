@@ -1,0 +1,4 @@
+# git ignore
+Empleados/secret.json
+Empleados/applications/home
+Empleados/templates/home
