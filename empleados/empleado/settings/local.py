@@ -1,21 +1,4 @@
-"""
-LOCAL ES PARA CUANDO TRABAJAMOS DE FORMA LOCAL
-QUITAR:
-    - Todo lo que estaba en base.py y dejando todo eso que se quito del mismo para luego importarlo
-DEJAR: 
-    - Security Warning --> debug, allowed_hosts
-    - Databases
-    - Static Url
 
-Para correrlo hay que activar el entorno virtual y luego correr el servidor con la nueva ruta de settings.py
-python manage.py runserver --settings=empleado.settings.local
-Esto permite correr el programa desde LOCAL.PY, --settings aclara que queremos trabajar con esa carpeta, que se encuentra 
-dentro de empleado, dentro de la carpeta settings(creada) y elegir el archivo con cual queremos iniciar(en este caso local.py)
-
-
-"""
-
-# IMPORTAR BASE
 from .base import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
