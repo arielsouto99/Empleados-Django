@@ -1,11 +1,3 @@
-"""
-LA BASE PARA QUE CONTENGA TANTO EL ARCHIVO QUE SE TRABAJA DE MANERA LOCAL COMO TAMBIEN EL DE PRODUCCION
-QUITAR:
-    - Security Warning --> debug, allowed_hosts
-    - Databases
-    - Static Url
-
-"""
 from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 import json
@@ -22,13 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 with open("secret.json") as f:
     secret = json.loads(f.read())
 
+
 def get_secret(secret_name, secrets=secret):
     try:
         return secrets[secret_name]
     except:
         msg = "la variable %s no existe" % secret_name
         raise ImproperlyConfigured(msg)
-
 
 
 SECRET_KEY = get_secret('SECRET_KEY')
@@ -85,7 +77,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'empleado.wsgi.application'
-
 
 
 # Password validation
